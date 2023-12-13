@@ -155,7 +155,7 @@ Module.register("MMM-CoinMarketCap", {
     self.apiVersion = "v1/";
     self.apiListingsEndpoint = "cryptocurrency/map";
     self.maxListingAttempts = 4; // How many times to try downloading the listing before giving up and displaying an error
-    self.apiTickerEndpoint = "cryptocurrency/quotes/latest";
+    self.apiTickerEndpoint = "v2/cryptocurrency/quotes/latest";
     self.maxTickerAttempts = 2; // How many times to try updating a currency before giving up
     self.allColumnTypes = [
       "name",
@@ -486,7 +486,7 @@ Module.register("MMM-CoinMarketCap", {
   getListings: function (attemptNum) {
     var self = this;
     self.log(self.translate("LISTINGS_REQUESTED"));
-    var url = self.apiBaseURL + self.apiVersion + self.apiListingsEndpoint;
+    var url = self.apiBaseURL + self.apiListingsEndpoint;
     self.sendSocketNotification("GET_LISTINGS", {
       apiKey: self.apiKey,
       instanceID: self.instanceID,
@@ -517,7 +517,6 @@ Module.register("MMM-CoinMarketCap", {
     var id_string = id_list.join(",");
     var url =
       self.apiBaseURL +
-      self.apiVersion +
       self.apiTickerEndpoint +
       "?id=" +
       id_string +
