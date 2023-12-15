@@ -153,7 +153,7 @@ Module.register("MMM-CoinMarketCap", {
       "https://s3.coinmarketcap.com/generated/sparklines/web/{range}d/2781/{id}.svg?noCache={noCache}";
     self.apiBaseURL = "https://pro-api.coinmarketcap.com/";
     self.apiVersion = "v1/";
-    self.apiListingsEndpoint = "cryptocurrency/map";
+    self.apiListingsEndpoint = "v1/cryptocurrency/map";
     self.maxListingAttempts = 4; // How many times to try downloading the listing before giving up and displaying an error
     self.apiTickerEndpoint = "v2/cryptocurrency/quotes/latest";
     self.maxTickerAttempts = 2; // How many times to try updating a currency before giving up
